@@ -1,0 +1,36 @@
+entity TeenUser {
+	userName String required,
+    password String required,
+    email String required,
+    firstName String required,
+    lastName String required,
+    medicalID String required
+}
+
+entity UserMetaData {
+	age Int, 
+    preferredName String    
+}
+
+relationship OneToOne {
+	TeenUser{metadata} to UserMetaData{user(userName)}
+}
+
+entity Reminder {
+	title String required,
+    description String,
+    time ZoneDateTime required
+}
+
+entity Record {
+	glucoseLevel Int required,
+    time ZoneDateTime required,
+    mood String,
+    notes String
+}
+
+relationship OneToMany {
+	TeenUser{reminders(time)} to Reminder{user(userName)},
+    TeenUser{records(time)} to Record{user(userName)}
+}
+
