@@ -5,6 +5,7 @@
  */
 
 import React, { Component } from 'react';
+import RNCalendarReminders from 'react-native-calendar-reminders';
 import {
   AppRegistry,
   StyleSheet,
@@ -17,7 +18,7 @@ export default class Team5 extends Component {
     return (
       <View style={styles.container}>
         <Text style={styles.welcome}>
-          Welcome to MyDay!
+          Welcome to MyDay
         </Text>
         <Text style={styles.instructions}>
           To get started, enter your credentials.
