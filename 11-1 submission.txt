@@ -1,0 +1,3 @@
+-Had long discussions about project specifications and questions we needed answered by mentor
+-Configured react-native and android studio
+-Began learning how react-native works and how to combine it with jhipster (will be doing this for next few classes probably)
