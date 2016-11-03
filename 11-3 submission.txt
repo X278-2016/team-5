@@ -1,0 +1,3 @@
+-worked on creating and understanding how we can make jhipster and react interact
+-current goal is to have it so that when the react app runs, it automatically makes a post to jhipster then calls
+down that same data and displays it
