@@ -1,11 +1,6 @@
-/**
- * Sample React Native App
- * https://github.com/facebook/react-native
- * @flow
- */
+'use strict';
 
 import React, { Component } from 'react';
-import RNCalendarReminders from 'react-native-calendar-reminders';
 import {
   AppRegistry,
   StyleSheet,
@@ -13,7 +8,7 @@ import {
   View
 } from 'react-native';
 
-export default class Team5 extends Component {
+export default class MyDay extends Component {
   render() {
     return (
       <View style={styles.container}>
@@ -28,6 +23,19 @@ export default class Team5 extends Component {
           Cmd+D or shake for dev menu
         </Text>
       </View>
+    );
+  }
+}
+
+class PropertyFinderApp extends Component {
+  render() {
+    return (
+      <NavigatorIOS
+        style={styles.container}
+        initialRoute={{
+          title: 'Property Finder',
+          component: MyDay,
+        }}/>
     );
   }
 }
@@ -51,4 +59,4 @@ const styles = StyleSheet.create({
   },
 });
 
-AppRegistry.registerComponent('Team5', () => Team5);
+AppRegistry.registerComponent('MyDay', () => MyDay);
