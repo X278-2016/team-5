@@ -1,0 +1,1 @@
+Today I worked more on linking jhipster with react-native and got a basic react-native app to run
