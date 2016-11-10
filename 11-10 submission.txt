@@ -1,0 +1,2 @@
+Today I got closer to the goal of syncing JHipster with the react app.
+Hoping to finish over the weekend and be ready by tuesday
