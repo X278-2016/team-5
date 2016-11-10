@@ -1,0 +1,1 @@
+Today I focused on componetizing the question form. I have picutres of the breakdown if you want to see it, I didnt write any code for it yet, just planned it out. Didnt realize how many moving parts are on such a small view. 
