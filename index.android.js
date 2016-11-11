@@ -16,23 +16,26 @@ class diabetesApp extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      message: ''
+      user: "test",
+        glucose: 5,
+        time:'test',
+        mood:'test',
+        message:''
     };
-    this._executeQuery('http://localhost:8080/api/')
+    this._executeQuery()
   }
   render() {
-    return <ReactNative.Text style={styles.text}>{this.state.message}</ReactNative.Text>;
+    return <ReactNative.Text style={styles.text}>Message: {this.state.message}{"\n"}User: {this.state.user}{"\n"}Glucose: {this.state.glucose}{"\n"}Mood: {this.state.mood}{"\n"}Time: {this.state.time}</ReactNative.Text>;
   }
 
-  _executeQuery(query) {
-    console.log(query);
-    fetch(query)
-        .then(response => response.json())
-  .then(json => this._handleResponse(json.response))
+  _executeQuery() {
+    fetch('http://10.66.195.180:8080/api/records/1')
+        .then((response) => response.json())
+  .then((responseJson) => this.setState({
+          message:responseJson.id, user:responseJson.user,glucose:responseJson.glucoseLevel,mood:responseJson.mood,time:responseJson.dateTime
+      }))
   .catch(error =>
-    this.setState({
-      message: 'Something bad happened ' + error
-    }));
+    this.setState({message:'we done failed'}));
   }
 
   _handleResponse(response) {
