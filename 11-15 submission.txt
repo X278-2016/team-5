@@ -1,0 +1,2 @@
+Managed to sync JHipster and react. Unfortunately it doesnt work on ios yet as ios only allows https api requests
+See index.android.js for code used
