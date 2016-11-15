@@ -22,7 +22,7 @@
     </appender>
 -->
 
-    <logger name="org.jhipster.com" level="#logback.loglevel#"/>
+    <logger name="com.mycompany.myapp" level="#logback.loglevel#"/>
 
     <logger name="javax.activation" level="WARN"/>
     <logger name="javax.mail" level="WARN"/>

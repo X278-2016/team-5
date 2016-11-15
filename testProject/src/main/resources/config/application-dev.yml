@@ -13,6 +13,7 @@
 
 spring:
     profiles:
+        active: dev
         include: swagger
     devtools:
         restart:
@@ -31,7 +32,7 @@ spring:
         console:
             enabled: false
     jpa:
-        database-platform: org.jhipster.com.domain.util.FixedH2Dialect
+        database-platform: com.mycompany.myapp.domain.util.FixedH2Dialect
         database: H2
         show-sql: true
         properties:
@@ -67,7 +68,7 @@ jhipster:
     security:
         rememberMe:
             # security key (this key should be unique for your application, and kept secret)
-            key: 8c649bd141968eecba9bf08394f21ccfda45d5a8
+            key: 660cd9f070a1297870fb74a5c1d794e02b427091
     mail: # specific JHipster mail property, for standard properties see MailProperties
         from: testProject@localhost
     metrics: # DropWizard Metrics configuration, used by MetricsConfiguration

@@ -1,62 +1,56 @@
 'use strict';
 
-import React, { Component } from 'react';
-import {
-  AppRegistry,
-  StyleSheet,
-  Text,
-  View
-} from 'react-native';
+var React = require('react-native');
 
-export default class MyDay extends Component {
-  render() {
-    return (
-      <View style={styles.container}>
-        <Text style={styles.welcome}>
-          Welcome to MyDay
-        </Text>
-        <Text style={styles.instructions}>
-          To get started, enter your credentials.
-        </Text>
-        <Text style={styles.instructions}>
-          Press Cmd+R to reload,{'\n'}
-          Cmd+D or shake for dev menu
-        </Text>
-      </View>
-    );
-  }
-}
+var {
+    AppRegistry,
+    StyleSheet,
+    Text,
+    View,
+    TouchableHighlight,
+    AlertIOS,
+} = React;
 
-class PropertyFinderApp extends Component {
-  render() {
-    return (
-      <NavigatorIOS
-        style={styles.container}
-        initialRoute={{
-          title: 'Property Finder',
-          component: MyDay,
-        }}/>
-    );
-  }
-}
+var ReactProject = React.createClass({
 
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    justifyContent: 'center',
-    alignItems: 'center',
-    backgroundColor: '#F5FCFF',
-  },
-  welcome: {
-    fontSize: 20,
-    textAlign: 'center',
-    margin: 10,
-  },
-  instructions: {
-    textAlign: 'center',
-    color: '#333333',
-    marginBottom: 5,
-  },
+    _onPressButtonGET: function() {
+        fetch("http://10.66.69.254:8080/api/users", {method: "GET"})
+        .then((response) => response.json())
+        .then((responseData) => {
+            AlertIOS.alert(
+                "GET Response",
+                "Search Query -> " + responseData.search
+            )
+        })
+        .done();
+    },
+
+    render: function() {
+        return (
+            <View style={styles.container}>
+                <TouchableHighlight onPress={this._onPressButtonGET} style={styles.button}>
+                    <Text>GET</Text>
+                </TouchableHighlight>
+            </View>
+        );
+    },
+
 });
 
-AppRegistry.registerComponent('MyDay', () => MyDay);
+var styles = StyleSheet.create({
+    container: {
+        flex: 1,
+        flexDirection: 'row',
+        justifyContent: 'center',
+        alignItems: 'center',
+        backgroundColor: '#F5FCFF',
+    },
+    button: {
+        backgroundColor: '#eeeeee',
+        padding: 10,
+        marginRight: 5,
+        marginLeft: 5,
+    }
+});
+
+React.AppRegistry.registerComponent('MyDay', () => ReactProject);

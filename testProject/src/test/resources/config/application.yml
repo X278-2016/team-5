@@ -10,6 +10,7 @@
 # http://docs.spring.io/spring-boot/docs/current/reference/html/common-application-properties.html
 # ===================================================================
 
+
 spring:
     application:
         name: testProject
@@ -22,7 +23,7 @@ spring:
         username:
         password:
     jpa:
-        database-platform: org.jhipster.com.domain.util.FixedH2Dialect
+        database-platform: com.mycompany.myapp.domain.util.FixedH2Dialect
         database: H2
         open-in-view: false
         show-sql: true
@@ -66,7 +67,7 @@ jhipster:
     security:
         rememberMe:
             # security key (this key should be unique for your application, and kept secret)
-            key: 8c649bd141968eecba9bf08394f21ccfda45d5a8
+            key: 660cd9f070a1297870fb74a5c1d794e02b427091
     metrics: # DropWizard Metrics configuration, used by MetricsConfiguration
         jmx.enabled: true
     swagger:
