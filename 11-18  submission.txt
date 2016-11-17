@@ -1,0 +1,3 @@
+We managed to fix our IOS problem
+I started to work on adding buttons and input text to eventually get to a point where we can submit
+records and then pull them filtering by username
