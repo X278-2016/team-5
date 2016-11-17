@@ -29,7 +29,7 @@ class diabetesApp extends React.Component {
   }
 
   _executeQuery() {
-    fetch('http://10.66.81.216:8080/api/records/1')
+    fetch('http://10.66.106.240:8080/api/records/1')
         .then((response) => response.json())
   .then((json) => this.setState({
           message:json.id, user:json.user,glucose:json.glucoseLevel,mood:json.mood,time:json.dateTime
