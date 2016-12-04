@@ -160,14 +160,13 @@ class postPage extends Component {
 		"mood": this.state.mood, 
 		"dateTime": this.state.dateTime, 
 		"location": this.state.location})})
-    .then((response) => response.json())
-    .then((responseData) => {
-    if (response.status == 200) {
-    	Alert.alert('Result', 'Posted your record!').done();
+    .then(function(response) {
+    if(response.status == 201) {
+    	Alert.alert("Result", "Posted your record!")
+    } else {
+	Alert.alert("Result", "Invalid data, please try again!")
     }
-    else {
-	Alert.alert('Result', 'Invalid data, try again!').done();
-    });
+    }).done();
     }
 
     render() {
