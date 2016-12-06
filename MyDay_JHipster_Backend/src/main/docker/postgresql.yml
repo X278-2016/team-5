@@ -1,0 +1,12 @@
+version: '2'
+services:
+    myday-postgresql:
+        container_name: myday-postgresql
+        image: postgres:9.5.4
+        # volumes:
+        #     - ~/volumes/jhipster/MyDay/postgresql/:/var/lib/postgresql/
+        environment:
+            - POSTGRES_USER=MyDay
+            - POSTGRES_PASSWORD=
+        ports:
+            - 5432:5432

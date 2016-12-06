@@ -1,0 +1,26 @@
+{
+    "myDayApp": {
+        "record" : {
+            "home": {
+                "title": "Records",
+                "createLabel": "Crear nuevo Record",
+                "createOrEditLabel": "Crear o editar Record",
+                "search": "Search for Record"
+            },
+            "created": "Un nuevo Record ha sido creado con el identificador {{ param }}",
+            "updated": "Un Record ha sido actualizado con el identificador {{ param }}",
+            "deleted": "Un Record ha sido eliminado con el identificador {{ param }}",
+            "delete": {
+                "question": "¿Seguro que quiere eliminar Record {{ id }}?"
+            },
+            "detail": {
+                "title": "Record"
+            },
+            "username": "Username",
+            "glucoseLevel": "Glucose Level",
+            "mood": "Mood",
+            "date": "Date",
+            "location": "Location"
+        }
+    }
+}
