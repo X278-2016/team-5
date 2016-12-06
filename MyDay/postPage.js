@@ -3,7 +3,6 @@
 import React, { Component } from 'react'
 import {
     Alert,
-    DatePickerAndroid,
     StyleSheet,
     Text,
     TextInput,
@@ -154,10 +153,7 @@ class postPage extends Component {
     onPostPressed() {
         fetch("https://vanderbilt-myday.herokuapp.com/api/records", {
 	method: "POST", 
-	headers: {
-      {/* need authorization */}
-      'Content-Type':'application/json'
-    }, 
+	headers: {'Content-Type':'application/json'}, 
 	body: JSON.stringify({
 		"username":this.state.userName, 
 		"glucoseLevel":this.state.glucoseLevel, 
@@ -223,7 +219,7 @@ class postPage extends Component {
                 underlayColor='#99d9f4'>
                 <Text style={styles.buttonText}>Post</Text>
             </TouchableHighlight>
-            {/* <Image source={require('./Resources/meterImage.png')} style={styles.image}/> */}
+            <Image source={require('./Resources/meterImage.png')} style={styles.image}/>
             </View>
     );
     }

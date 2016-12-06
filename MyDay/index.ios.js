@@ -2,6 +2,18 @@
 
 var React = require('react');
 var ReactNative = require('react-native');
+import {
+    StyleSheet,
+    Text,
+    TextInput,
+    View,
+    TouchableHighlight,
+    ActivityIndicator,
+    Image,
+    AppRegistry,
+    NavigatorIOS
+} from 'react-native';
+var postPage = require('./postPage');
 
 var styles = ReactNative.StyleSheet.create({
   text: {
@@ -9,43 +21,69 @@ var styles = ReactNative.StyleSheet.create({
     backgroundColor: 'white',
     fontSize: 30,
     margin: 80
-  }
+  },
+  container: {
+    flex: 1
+  },
+  button: {
+        height: 36,
+        flex: 1,
+        flexDirection: 'row',
+        backgroundColor: '#48BBEC',
+        borderColor: '#48BBEC',
+        borderWidth: 1,
+        borderRadius: 8,
+        marginBottom: 10,
+        alignSelf: 'stretch',
+        justifyContent: 'center'
+    },
+   buttonText: {
+        fontSize: 18,
+        color: 'white',
+        alignSelf: 'center'
+    }
 });
 
-class MyDay extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      user: "test",
-        glucose: 5,
-        time:'test',
-        mood:'test',
-        message:''
-    };
-    this._executeQuery()
-  }
+class MainPage extends React.Component {
+	onPostPressed(event) {
+		this.props.navigator.push({
+			title: 'Post Record',
+			component: postPage
+		});
+	}
+
+	render() {
+	return (
+	<View style={styles.container}>
+	<TouchableHighlight style={styles.button}
+                //onPress={this.onGetPressed.bind(this)}
+                underlayColor='#99d9f4'>
+                <Text style={styles.buttonText}>Get</Text>
+        </TouchableHighlight>
+	<TouchableHighlight style={styles.button}
+                onPress={this.onPostPressed.bind(this)}
+                underlayColor='#99d9f4'>
+                <Text style={styles.buttonText}>Post</Text>
+        </TouchableHighlight>
+	</View>
+	);
+	}
+}
+
+	
+
+class diabetesAppV2 extends React.Component {
   render() {
-    return <ReactNative.Text style={styles.text}>Message: {this.state.message}{"\n"}User: {this.state.user}{"\n"}Glucose: {this.state.glucose}{"\n"}Mood: {this.state.mood}{"\n"}Time: {this.state.time}</ReactNative.Text>;
-  }
-
-  _executeQuery() {
-    fetch('https://vanderbilt-myday.herokuapp.com/api/records/api/records/1')
-        .then((response) => response.json())
-  .then((json) => this.setState({
-          message:json.id, user:json.user,glucose:json.glucoseLevel,mood:json.mood,time:json.dateTime
-      }))
-  .catch(error =>
-    this.setState({message:'we done failed'+error}));
-  }
-
-  _handleResponse(response) {
-    this.setState({message: '' });
-    if (response.application_response_code.substr(0, 1) === '1') {
-      this.setState({message: response.listings})
-    } else {
-      this.setState({ message: 'Location not recognized; please try again.'});
-    }
+    return (
+      <NavigatorIOS
+        style={styles.container}
+        initialRoute={{
+          title: 'My Day',
+          component: MainPage,
+        }}/>
+    );
   }
 }
 
-ReactNative.AppRegistry.registerComponent('MyDay', function() { return MyDay });
+
+ReactNative.AppRegistry.registerComponent('MyDay', function() { return diabetesAppV2});
