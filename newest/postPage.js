@@ -205,7 +205,7 @@ class postPage extends Component {
                     style={styles.locationInput}
                     value={this.state.location}
                     onChange={this.onLocationTextChanged.bind(this)}
-                    placeholder='Enter your location'/>
+                    placeholder='Enter your location at the time of testing'/>
             </View>		
             <View style={styles.flowRight}>
                 <TextInput
