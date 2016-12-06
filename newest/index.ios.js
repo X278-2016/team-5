@@ -2,6 +2,17 @@
 
 var React = require('react');
 var ReactNative = require('react-native');
+import {
+    Alert,	
+    StyleSheet,
+    Text,
+    TextInput,
+    View,
+    TouchableHighlight,
+    ActivityIndicator,
+    Image,
+    AppRegistry
+} from 'react-native';
 var postPage = require('./postPage');
 
 var styles = ReactNative.StyleSheet.create({
