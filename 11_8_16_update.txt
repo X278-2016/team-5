@@ -1,6 +1,0 @@
-Today we focused on a tutorial located here https://www.raywenderlich.com/126063/react-native-tutorial
-
-I didn't bother typing it in as we were going because we were all working on it at the same time
-
-It was the first resource that really helped us understand how we can connect the jhipster backend to the 
-react native front end. 
