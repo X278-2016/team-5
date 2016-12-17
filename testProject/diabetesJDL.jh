@@ -1,0 +1,6 @@
+entity Record {
+	user String required,
+    glucoseLevel Integer required,
+    mood String,
+    dateTime ZonedDateTime required,
+}
